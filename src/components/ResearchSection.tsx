@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -56,26 +55,6 @@ export function ResearchSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        <div className="mt-16 p-6 rounded-lg bg-muted/30 border border-border/50">
-          <h3 className="text-xl font-semibold mb-4">Current Projects</h3>
-          <ul className="space-y-4">
-            <li className="flex gap-3">
-              <div className="flex-shrink-0 w-1 bg-blue-500 rounded-full"></div>
-              <div>
-                <h4 className="font-medium">Project Title 1</h4>
-                <p className="text-muted-foreground">Brief description of the project and its goals.</p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <div className="flex-shrink-0 w-1 bg-indigo-500 rounded-full"></div>
-              <div>
-                <h4 className="font-medium">Project Title 2</h4>
-                <p className="text-muted-foreground">Brief description of the project and its goals.</p>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
