@@ -8,39 +8,39 @@ export function HeroSection() {
 
   const experienceItems = [
     {
-      year: "2020 - Present",
-      position: "Associate Professor",
-      institution: "University of Science and Technology",
+      year: "experience.current",
+      position: "experience.position1",
+      institution: "experience.institution1",
     },
     {
-      year: "2015 - 2020",
-      position: "Assistant Professor",
-      institution: "Institute of Advanced Research",
+      year: "experience.previous1",
+      position: "experience.position2",
+      institution: "experience.institution2",
     },
     {
-      year: "2010 - 2015",
-      position: "Postdoctoral Researcher",
-      institution: "National Laboratory of Technology",
+      year: "experience.previous2",
+      position: "experience.position3",
+      institution: "experience.institution3",
     }
   ];
 
   const educationItems = [
     {
-      year: "2005 - 2010",
-      degree: "Ph.D. in Computer Science",
-      institution: "University of Technology",
+      year: "education.phd",
+      degree: "education.phdDegree",
+      institution: "education.phdInstitution",
     },
     {
-      year: "2002 - 2005",
-      degree: "M.Sc. in Computer Science",
-      institution: "Institute of Science",
+      year: "education.masters",
+      degree: "education.mastersDegree",
+      institution: "education.mastersInstitution",
     }
   ];
 
   const researchInterests = [
-    "Artificial Intelligence: Machine learning algorithms and applications",
-    "Data Science: Big data analytics and knowledge discovery",
-    "Human-Computer Interaction: User experience and interface design"
+    "research.ai",
+    "research.data",
+    "research.hci"
   ];
 
   return (
@@ -91,12 +91,12 @@ export function HeroSection() {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md h-full">
               <div className="p-6">
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold mb-3">Biography</h3>
+                  <h3 className="text-xl font-semibold mb-3">{t("nav.about")}</h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
-                    {t("about.bio")}
+                    {t("hero.biography")}
                   </p>
                   <p className="text-gray-700 dark:text-gray-300">
-                    {t("about.currentPosition")}
+                    {t("hero.currentPosition")}
                   </p>
                 </div>
                 
@@ -105,14 +105,14 @@ export function HeroSection() {
                   <div>
                     <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
                       <Briefcase size={20} className="text-blue-600 dark:text-blue-400" />
-                      Professional Experience
+                      {t("hero.experience")}
                     </h3>
                     <div className="space-y-3">
                       {experienceItems.map((item, index) => (
                         <div key={index} className="border-l-2 border-blue-600 dark:border-blue-400 pl-4 py-1">
-                          <p className="text-sm text-gray-500 dark:text-gray-400">{item.year}</p>
-                          <p className="font-medium">{item.position}</p>
-                          <p className="text-sm text-gray-700 dark:text-gray-300">{item.institution}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">{t(item.year)}</p>
+                          <p className="font-medium">{t(item.position)}</p>
+                          <p className="text-sm text-gray-700 dark:text-gray-300">{t(item.institution)}</p>
                         </div>
                       ))}
                     </div>
@@ -122,14 +122,14 @@ export function HeroSection() {
                   <div>
                     <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
                       <GraduationCap size={20} className="text-blue-600 dark:text-blue-400" />
-                      Education
+                      {t("hero.education")}
                     </h3>
                     <div className="space-y-3">
                       {educationItems.map((item, index) => (
                         <div key={index} className="border-l-2 border-blue-600 dark:border-blue-400 pl-4 py-1">
-                          <p className="text-sm text-gray-500 dark:text-gray-400">{item.year}</p>
-                          <p className="font-medium">{item.degree}</p>
-                          <p className="text-sm text-gray-700 dark:text-gray-300">{item.institution}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">{t(item.year)}</p>
+                          <p className="font-medium">{t(item.degree)}</p>
+                          <p className="text-sm text-gray-700 dark:text-gray-300">{t(item.institution)}</p>
                         </div>
                       ))}
                     </div>
@@ -140,13 +140,13 @@ export function HeroSection() {
                 <div className="mt-6">
                   <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
                     <BookOpen size={20} className="text-blue-600 dark:text-blue-400" />
-                    Research Interests
+                    {t("hero.research")}
                   </h3>
                   <ul className="space-y-2">
                     {researchInterests.map((interest, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 mt-2"></div>
-                        <p className="text-gray-700 dark:text-gray-300">{interest}</p>
+                        <p className="text-gray-700 dark:text-gray-300">{t(interest)}</p>
                       </li>
                     ))}
                   </ul>

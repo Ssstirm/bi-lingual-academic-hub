@@ -20,26 +20,23 @@ export function ContactSection() {
           <div>
             <Card className="h-full">
               <CardContent className="p-6 h-full">
-                <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+                <h3 className="text-xl font-semibold mb-6">{t("contact.info")}</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-1" />
                     <div>
-                      <p className="font-medium mb-1">Email</p>
-                      <p className="text-gray-600 dark:text-gray-400">your.email@university.edu</p>
+                      <p className="font-medium mb-1">{t("contact.email")}</p>
+                      <p className="text-gray-600 dark:text-gray-400">{t("contact.emailAddress")}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4">
                     <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-1" />
                     <div>
-                      <p className="font-medium mb-1">Office</p>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        Room 123, Computer Science Building<br />
-                        University of Science and Technology<br />
-                        123 Academic Street<br />
-                        City, State 12345
+                      <p className="font-medium mb-1">{t("contact.office")}</p>
+                      <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+                        {t("contact.officeAddress")}
                       </p>
                     </div>
                   </div>
@@ -47,16 +44,15 @@ export function ContactSection() {
                   <div className="flex items-start gap-4">
                     <Calendar className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-1" />
                     <div>
-                      <p className="font-medium mb-1">Office Hours</p>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        Monday: 10:00 AM - 12:00 PM<br />
-                        Wednesday: 2:00 PM - 4:00 PM
+                      <p className="font-medium mb-1">{t("contact.hours")}</p>
+                      <p className="text-gray-600 dark:text-gray-400 whitespace-pre-line">
+                        {t("contact.hoursList")}
                       </p>
                     </div>
                   </div>
                   
                   <div className="pt-4">
-                    <h3 className="text-lg font-semibold mb-3">Connect</h3>
+                    <h3 className="text-lg font-semibold mb-3">{t("contact.connect")}</h3>
                     <div className="flex gap-4">
                       <a href="#" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors" aria-label="GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
@@ -77,30 +73,30 @@ export function ContactSection() {
           <div>
             <Card>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+                <h3 className="text-xl font-semibold mb-6">{t("contact.message")}</h3>
                 <form className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">Name</label>
-                      <Input id="name" placeholder="Your Name" />
+                      <label htmlFor="name" className="text-sm font-medium">{t("contact.name")}</label>
+                      <Input id="name" placeholder={t("contact.namePlaceholder")} />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">Email</label>
-                      <Input id="email" type="email" placeholder="your.email@example.com" />
+                      <label htmlFor="email" className="text-sm font-medium">{t("contact.emailField")}</label>
+                      <Input id="email" type="email" placeholder={t("contact.emailPlaceholder")} />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                    <Input id="subject" placeholder="Message Subject" />
+                    <label htmlFor="subject" className="text-sm font-medium">{t("contact.subject")}</label>
+                    <Input id="subject" placeholder={t("contact.subjectPlaceholder")} />
                   </div>
                   
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">Message</label>
-                    <Textarea id="message" placeholder="Your message..." className="min-h-[120px]" />
+                    <label htmlFor="message" className="text-sm font-medium">{t("contact.message")}</label>
+                    <Textarea id="message" placeholder={t("contact.messagePlaceholder")} className="min-h-[120px]" />
                   </div>
                   
-                  <Button type="submit" className="w-full">Send Message</Button>
+                  <Button type="submit" className="w-full">{t("contact.send")}</Button>
                 </form>
               </CardContent>
             </Card>

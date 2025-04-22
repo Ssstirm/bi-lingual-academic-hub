@@ -9,26 +9,26 @@ export function PublicationsSection() {
 
   const publications = [
     {
-      title: "Advancing Machine Learning Techniques for Natural Language Processing",
-      authors: "Your Name, Co-author A, Co-author B",
-      venue: "Journal of Artificial Intelligence Research",
-      year: "2023",
+      titleKey: "publications.pub1.title",
+      authorsKey: "publications.pub1.authors",
+      venueKey: "publications.pub1.venue",
+      yearKey: "publications.pub1.year",
       doi: "10.1234/jair.2023.123",
       url: "#"
     },
     {
-      title: "Statistical Analysis of Big Data: Challenges and Opportunities",
-      authors: "Your Name, Co-author C",
-      venue: "International Conference on Data Science",
-      year: "2022",
+      titleKey: "publications.pub2.title",
+      authorsKey: "publications.pub2.authors",
+      venueKey: "publications.pub2.venue",
+      yearKey: "publications.pub2.year",
       doi: "10.5678/icds.2022.456",
       url: "#"
     },
     {
-      title: "User Interface Design Principles for Academic Websites",
-      authors: "Your Name, Co-author D, Co-author E",
-      venue: "ACM Conference on Human Factors in Computing Systems",
-      year: "2021",
+      titleKey: "publications.pub3.title",
+      authorsKey: "publications.pub3.authors",
+      venueKey: "publications.pub3.venue",
+      yearKey: "publications.pub3.year",
       url: "#"
     }
   ];
@@ -49,7 +49,7 @@ export function PublicationsSection() {
         <div className="text-center mt-8">
           <Button variant="outline" size="lg" className="gap-2">
             <FileText size={18} />
-            View All Publications
+            {t("publications.viewAll")}
           </Button>
         </div>
       </div>
@@ -58,10 +58,10 @@ export function PublicationsSection() {
 }
 
 interface Publication {
-  title: string;
-  authors: string;
-  venue: string;
-  year: string;
+  titleKey: string;
+  authorsKey: string;
+  venueKey: string;
+  yearKey: string;
   doi?: string;
   url: string;
 }
@@ -71,19 +71,21 @@ interface PublicationCardProps {
 }
 
 function PublicationCard({ publication }: PublicationCardProps) {
+  const { t } = useLanguage();
+  
   return (
     <Card className="overflow-hidden hover:shadow-md transition-shadow">
       <CardContent className="p-6">
         <h3 className="text-lg font-semibold mb-2">
           <a href={publication.url} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" target="_blank" rel="noopener noreferrer">
-            {publication.title}
+            {t(publication.titleKey)}
           </a>
         </h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-3">{publication.authors}</p>
+        <p className="text-gray-600 dark:text-gray-400 mb-3">{t(publication.authorsKey)}</p>
         <div className="text-sm flex flex-wrap items-center gap-2">
-          <span className="font-medium text-gray-800 dark:text-gray-200">{publication.venue}</span>
+          <span className="font-medium text-gray-800 dark:text-gray-200">{t(publication.venueKey)}</span>
           <span className="text-gray-500 dark:text-gray-500">•</span>
-          <span>{publication.year}</span>
+          <span>{t(publication.yearKey)}</span>
           {publication.doi && (
             <>
               <span className="text-gray-500 dark:text-gray-500">•</span>

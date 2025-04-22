@@ -17,10 +17,10 @@ export function Footer() {
           
           <div className="flex gap-6">
             <a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Privacy Policy
+              {t("footer.privacy")}
             </a>
             <a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-              Terms of Use
+              {t("footer.terms")}
             </a>
           </div>
         </div>
