@@ -1,4 +1,3 @@
-
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -56,44 +55,42 @@ export function PublicationsSection() {
   ];
 
   return (
-    <section id="publications" className="py-20 px-4 sm:px-6 md:px-12 lg:px-24 bg-muted/50">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          {t("publications.title")}
-        </h2>
-        
-        <Tabs defaultValue="journal" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="journal">{t("publications.journal")}</TabsTrigger>
-            <TabsTrigger value="conference">{t("publications.conference")}</TabsTrigger>
-            <TabsTrigger value="book">{t("publications.book")}</TabsTrigger>
-          </TabsList>
+    <section id="publications" className="py-8">
+      <h2 className="text-2xl font-bold text-center mb-8">
+        {t("publications.title")}
+      </h2>
+      
+      <Tabs defaultValue="journal" className="w-full">
+        <TabsList className="grid w-full grid-cols-3 mb-8">
+          <TabsTrigger value="journal">{t("publications.journal")}</TabsTrigger>
+          <TabsTrigger value="conference">{t("publications.conference")}</TabsTrigger>
+          <TabsTrigger value="book">{t("publications.book")}</TabsTrigger>
+        </TabsList>
           
-          <TabsContent value="journal">
-            <div className="space-y-4">
-              {journalArticles.map((article, index) => (
-                <PublicationCard key={index} publication={article} type="journal" />
-              ))}
-            </div>
-          </TabsContent>
+        <TabsContent value="journal">
+          <div className="space-y-4">
+            {journalArticles.map((article, index) => (
+              <PublicationCard key={index} publication={article} type="journal" />
+            ))}
+          </div>
+        </TabsContent>
           
-          <TabsContent value="conference">
-            <div className="space-y-4">
-              {conferenceProceedings.map((paper, index) => (
-                <PublicationCard key={index} publication={paper} type="conference" />
-              ))}
-            </div>
-          </TabsContent>
+        <TabsContent value="conference">
+          <div className="space-y-4">
+            {conferenceProceedings.map((paper, index) => (
+              <PublicationCard key={index} publication={paper} type="conference" />
+            ))}
+          </div>
+        </TabsContent>
           
-          <TabsContent value="book">
-            <div className="space-y-4">
-              {books.map((book, index) => (
-                <PublicationCard key={index} publication={book} type="book" />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
+        <TabsContent value="book">
+          <div className="space-y-4">
+            {books.map((book, index) => (
+              <PublicationCard key={index} publication={book} type="book" />
+            ))}
+          </div>
+        </TabsContent>
+      </Tabs>
     </section>
   );
 }
