@@ -1,56 +1,32 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function PublicationsSection() {
   const { t } = useLanguage();
 
-  const journalArticles = [
+  const publications = [
     {
-      title: "Title of Journal Article 1",
+      title: "Title of Publication 1",
       authors: "Your Name, Co-author A, Co-author B",
-      journal: "Journal Name",
+      venue: "Journal/Conference Name",
       year: "20XX",
       doi: "10.XXXX/XXXXX",
       url: "#"
     },
     {
-      title: "Title of Journal Article 2",
+      title: "Title of Publication 2",
       authors: "Your Name, Co-author C",
-      journal: "Journal Name",
+      venue: "Journal/Conference Name",
       year: "20XX",
       doi: "10.XXXX/XXXXX",
       url: "#"
-    }
-  ];
-
-  const conferenceProceedings = [
-    {
-      title: "Title of Conference Paper 1",
-      authors: "Your Name, Co-author D",
-      conference: "Conference Name",
-      location: "Location",
-      year: "20XX",
-      url: "#"
     },
     {
-      title: "Title of Conference Paper 2",
-      authors: "Your Name, Co-author E, Co-author F",
-      conference: "Conference Name",
-      location: "Location",
+      title: "Title of Publication 3",
+      authors: "Your Name, Co-author D, Co-author E",
+      venue: "Journal/Conference Name",
       year: "20XX",
-      url: "#"
-    }
-  ];
-
-  const books = [
-    {
-      title: "Title of Book or Chapter",
-      authors: "Your Name, Co-author G",
-      publisher: "Publisher Name",
-      year: "20XX",
-      isbn: "978-X-XX-XXXXXX-X",
       url: "#"
     }
   ];
@@ -62,37 +38,11 @@ export function PublicationsSection() {
           {t("publications.title")}
         </h2>
         
-        <Tabs defaultValue="journal" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="journal">{t("publications.journal")}</TabsTrigger>
-            <TabsTrigger value="conference">{t("publications.conference")}</TabsTrigger>
-            <TabsTrigger value="book">{t("publications.book")}</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="journal">
-            <div className="space-y-4">
-              {journalArticles.map((article, index) => (
-                <PublicationCard key={index} publication={article} type="journal" />
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="conference">
-            <div className="space-y-4">
-              {conferenceProceedings.map((paper, index) => (
-                <PublicationCard key={index} publication={paper} type="conference" />
-              ))}
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="book">
-            <div className="space-y-4">
-              {books.map((book, index) => (
-                <PublicationCard key={index} publication={book} type="book" />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+        <div className="space-y-4">
+          {publications.map((publication, index) => (
+            <PublicationCard key={index} publication={publication} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -101,22 +51,17 @@ export function PublicationsSection() {
 interface Publication {
   title: string;
   authors: string;
-  journal?: string;
-  conference?: string;
-  location?: string;
-  publisher?: string;
+  venue: string;
   year: string;
   doi?: string;
-  isbn?: string;
   url: string;
 }
 
 interface PublicationCardProps {
   publication: Publication;
-  type: "journal" | "conference" | "book";
 }
 
-function PublicationCard({ publication, type }: PublicationCardProps) {
+function PublicationCard({ publication }: PublicationCardProps) {
   return (
     <Card className="overflow-hidden hover:shadow-md transition-shadow">
       <CardContent className="p-6">
@@ -126,29 +71,14 @@ function PublicationCard({ publication, type }: PublicationCardProps) {
           </a>
         </h3>
         <p className="text-muted-foreground mb-3">{publication.authors}</p>
-        
         <div className="text-sm">
-          {type === "journal" && (
-            <p>
-              <span className="font-medium">{publication.journal}</span>, {publication.year}
-              {publication.doi && <span> | DOI: {publication.doi}</span>}
-            </p>
-          )}
-          
-          {type === "conference" && (
-            <p>
-              <span className="font-medium">{publication.conference}</span>, {publication.location}, {publication.year}
-            </p>
-          )}
-          
-          {type === "book" && (
-            <p>
-              <span className="font-medium">{publication.publisher}</span>, {publication.year}
-              {publication.isbn && <span> | ISBN: {publication.isbn}</span>}
-            </p>
-          )}
+          <p>
+            <span className="font-medium">{publication.venue}</span>, {publication.year}
+            {publication.doi && <span> | DOI: {publication.doi}</span>}
+          </p>
         </div>
       </CardContent>
     </Card>
   );
 }
+
