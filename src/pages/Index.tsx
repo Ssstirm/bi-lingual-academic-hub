@@ -1,7 +1,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { ResearchSection } from "@/components/ResearchSection";
+import { ProjectSection } from "@/components/ProjectSection";
 import { PublicationsSection } from "@/components/PublicationsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -12,7 +12,7 @@ const Index = () => {
       <Navbar />
       <main className="flex-1">
         <HeroSection />
-        <ResearchSection />
+        <ProjectSection />
         <PublicationsSection />
         <ContactSection />
       </main>
