@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
 
-## Project info
+# Bilingual Academic Homepage
 
-**URL**: https://lovable.dev/projects/77d88780-adfb-4752-b4c2-f280c4367457
+A professional academic website with full bilingual support (English and Chinese). Perfect for showcasing research, publications, and contact information.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 🌐 Bilingual support (English/Chinese) with easy language switching
+- 📱 Fully responsive design that works on all devices
+- 🎓 Academic-focused sections for research, publications, and more
+- 🔄 Easy to customize with your own content
+- 📊 Modern and clean UI design
 
-**Use Lovable**
+## Sections
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/77d88780-adfb-4752-b4c2-f280c4367457) and start prompting.
+1. **Hero** - Introduction and headline
+2. **About** - Biography, education, and experience
+3. **Research** - Research interests and current projects
+4. **Publications** - Academic publications organized by type
+5. **Contact** - Contact information and form
 
-Changes made via Lovable will be committed automatically to this repo.
+## Deployment to GitHub Pages
 
-**Use your preferred IDE**
+To deploy this site on GitHub Pages:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Create a GitHub repository for your website
+2. Push this code to your repository
+3. In the repository settings, enable GitHub Pages:
+   - Go to Settings > Pages
+   - Set the source to your main branch
+   - Your site will be published at `https://yourusername.github.io/repository-name/`
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Using a Custom Domain (Optional)
 
-Follow these steps:
+1. In repository Settings > Pages:
+   - Add your custom domain in the "Custom domain" field
+   - Save the settings
+2. Configure your DNS provider:
+   - Add a CNAME record pointing to `yourusername.github.io`
+   - Wait for DNS propagation (can take up to 48 hours)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Customization
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+To customize this template with your information:
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Update personal information in the LanguageContext.tsx file with your details in both languages
+2. Replace the placeholder research interests, publications, and projects with your own
+3. Add your profile picture in the About section
+4. Update contact information with your real details
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Technology Stack
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- Typescript
 - Tailwind CSS
+- ShadcnUI Components
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/77d88780-adfb-4752-b4c2-f280c4367457) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is open source and available under the MIT License.
