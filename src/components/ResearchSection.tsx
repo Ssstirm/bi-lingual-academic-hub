@@ -1,3 +1,4 @@
+
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -29,51 +30,53 @@ export function ResearchSection() {
   ];
 
   return (
-    <section id="research" className="py-8">
-      <h2 className="text-2xl font-bold text-center mb-6">
-        {t("research.title")}
-      </h2>
-      
-      <p className="text-lg text-center mb-8 max-w-3xl mx-auto">
-        {t("research.description")}
-      </p>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {researchInterests.map((interest, index) => (
-          <Card key={index} className="overflow-hidden border border-border/50 transition-all hover:shadow-md">
-            <CardContent className="p-6">
-              <div className="mb-4 flex justify-center">
-                {interest.icon}
+    <section id="research" className="py-20 px-4 sm:px-6 md:px-12 lg:px-24">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-6">
+          {t("research.title")}
+        </h2>
+        
+        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+          {t("research.description")}
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {researchInterests.map((interest, index) => (
+            <Card key={index} className="overflow-hidden border border-border/50 transition-all hover:shadow-md">
+              <CardContent className="p-6">
+                <div className="mb-4 flex justify-center">
+                  {interest.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-center mb-3">
+                  {t(interest.key)}
+                </h3>
+                <p className="text-muted-foreground text-center">
+                  {interest.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
+        <div className="mt-16 p-6 rounded-lg bg-muted/30 border border-border/50">
+          <h3 className="text-xl font-semibold mb-4">Current Projects</h3>
+          <ul className="space-y-4">
+            <li className="flex gap-3">
+              <div className="flex-shrink-0 w-1 bg-blue-500 rounded-full"></div>
+              <div>
+                <h4 className="font-medium">Project Title 1</h4>
+                <p className="text-muted-foreground">Brief description of the project and its goals.</p>
               </div>
-              <h3 className="text-xl font-semibold text-center mb-3">
-                {t(interest.key)}
-              </h3>
-              <p className="text-muted-foreground text-center">
-                {interest.description}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-      
-      <div className="mt-8 p-4 rounded-lg bg-muted/30 border border-border/50">
-        <h3 className="text-lg font-semibold mb-3">Current Projects</h3>
-        <ul className="space-y-4">
-          <li className="flex gap-3">
-            <div className="flex-shrink-0 w-1 bg-blue-500 rounded-full"></div>
-            <div>
-              <h4 className="font-medium">Project Title 1</h4>
-              <p className="text-muted-foreground">Brief description of the project and its goals.</p>
-            </div>
-          </li>
-          <li className="flex gap-3">
-            <div className="flex-shrink-0 w-1 bg-indigo-500 rounded-full"></div>
-            <div>
-              <h4 className="font-medium">Project Title 2</h4>
-              <p className="text-muted-foreground">Brief description of the project and its goals.</p>
-            </div>
-          </li>
-        </ul>
+            </li>
+            <li className="flex gap-3">
+              <div className="flex-shrink-0 w-1 bg-indigo-500 rounded-full"></div>
+              <div>
+                <h4 className="font-medium">Project Title 2</h4>
+                <p className="text-muted-foreground">Brief description of the project and its goals.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );
