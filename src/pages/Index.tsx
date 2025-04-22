@@ -1,25 +1,15 @@
 
 import { Navbar } from "@/components/Navbar";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ResearchSection } from "@/components/ResearchSection";
-import { PublicationsSection } from "@/components/PublicationsSection";
-import { ContactSection } from "@/components/ContactSection";
+import { MainContent } from "@/components/MainContent";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
-      <main className="flex-1">
-        <div className="max-w-5xl mx-auto px-4">
-          <HeroSection />
-          <div className="space-y-12">
-            <AboutSection />
-            <ResearchSection />
-            <PublicationsSection />
-            <ContactSection />
-          </div>
+      <main className="flex-1 py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          <MainContent />
         </div>
       </main>
       <Footer />

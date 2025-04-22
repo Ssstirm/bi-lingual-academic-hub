@@ -5,24 +5,11 @@ export function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="border-t border-border py-4 px-4 mt-8">
+    <footer className="py-4 px-4">
       <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-2 md:mb-0">
-            <p className="text-sm text-muted-foreground">
-              {t("footer.copyright")}
-            </p>
-          </div>
-          
-          <div className="flex gap-4">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Use
-            </a>
-          </div>
-        </div>
+        <p className="text-sm text-center text-muted-foreground">
+          {t("footer.copyright")}
+        </p>
       </div>
     </footer>
   );
