@@ -8,49 +8,52 @@ export function ProjectSection() {
   const projects = [
     {
       key: "projects.project1",
+      title: "Artificial Intelligence Research",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 dark:text-blue-400"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2Z"/><rect x="7" y="13" width="2" height="2"/><rect x="15" y="13" width="2" height="2"/></svg>
       ),
-      description: "Description of project 1 goes here. Explain some key aspects and significance."
+      description: "Development of advanced AI algorithms for natural language processing and computer vision applications."
     },
     {
       key: "projects.project2",
+      title: "Data Science Applications",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-600"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-600 dark:text-indigo-400"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
       ),
-      description: "Description of project 2 goes here. Explain some key aspects and significance."
+      description: "Analysis of large-scale datasets to extract meaningful patterns and insights for decision-making processes."
     },
     {
       key: "projects.project3",
+      title: "Human-Computer Interaction",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.6.4-4.9-.3-1.2-.6-2-1.9-2.4-3.6.3-.2.5-.4.8-.6 1.2-.7 2.6-.9 4.2-.2z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-1.7.1-3.4.8-4.9 2z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-purple-600 dark:text-purple-400"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" x2="22" y1="20" y2="20"/></svg>
       ),
-      description: "Description of project 3 goes here. Explain some key aspects and significance."
+      description: "Design and evaluation of user interfaces to improve the usability and user experience of digital products."
     }
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 md:px-12 lg:px-24">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-6">
+    <section id="projects" className="py-12 bg-gray-50 dark:bg-gray-900">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-4">
           {t("projects.title")}
         </h2>
         
-        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+        <p className="text-lg text-center text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
           {t("projects.description")}
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden border border-border/50 transition-all hover:shadow-md">
+            <Card key={index} className="overflow-hidden border-none shadow-lg transition-all hover:shadow-xl">
               <CardContent className="p-6">
                 <div className="mb-4 flex justify-center">
                   {project.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-center mb-3">
-                  {t(project.key)}
+                  {project.title}
                 </h3>
-                <p className="text-muted-foreground text-center">
+                <p className="text-gray-600 dark:text-gray-400 text-center">
                   {project.description}
                 </p>
               </CardContent>
