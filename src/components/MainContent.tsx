@@ -8,7 +8,8 @@ import {
   Mail, 
   MapPin, 
   Github, 
-  Linkedin 
+  Linkedin,
+  Briefcase 
 } from "lucide-react";
 
 export function MainContent() {
@@ -40,11 +41,31 @@ export function MainContent() {
         </div>
       </div>
 
-      {/* Grid Layout for Main Content */}
+      {/* About Me Section */}
+      <Card className="mb-8">
+        <CardContent className="p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <User className="h-5 w-5 text-primary" />
+            <h2 className="text-lg font-semibold">About Me</h2>
+          </div>
+          <div className="prose max-w-none">
+            <p className="text-muted-foreground mb-4">
+              作为一名[领域]研究者，我专注于[具体研究方向]。我的研究旨在[研究目标]，
+              通过[方法/途径]来解决[具体问题]。在过去的研究中，我成功[重要成果]，
+              这些工作为[领域]带来了新的见解。
+            </p>
+            <p className="text-muted-foreground">
+              目前，我正在探索[新研究方向]，期望能够[研究愿景]。我热衷于与其他研究者
+              合作，共同推动[领域]的发展。
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Left Column */}
         <div className="space-y-6">
-          {/* Education */}
+          {/* Education Card */}
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-4">
@@ -80,24 +101,33 @@ export function MainContent() {
           </Card>
         </div>
 
-        {/* Right Column (spans 2 columns) */}
+        {/* Right Column */}
         <div className="md:col-span-2 space-y-6">
-          {/* Research Interests */}
+          {/* Projects Section */}
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-4">
-                <BookOpen className="h-5 w-5 text-primary" />
-                <h2 className="text-lg font-semibold">{t("research.title")}</h2>
+                <Briefcase className="h-5 w-5 text-primary" />
+                <h2 className="text-lg font-semibold">Featured Projects</h2>
               </div>
-              <ul className="list-disc list-inside space-y-2 ml-2">
-                <li>Research Interest 1</li>
-                <li>Research Interest 2</li>
-                <li>Research Interest 3</li>
-              </ul>
+              <div className="space-y-4">
+                <div className="border-l-2 border-primary/50 pl-3">
+                  <h3 className="font-medium">项目一：[项目名称]</h3>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    [简要描述项目的目标和影响。讨论使用的方法和取得的成果。]
+                  </p>
+                </div>
+                <div className="border-l-2 border-primary/50 pl-3">
+                  <h3 className="font-medium">项目二：[项目名称]</h3>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    [描述项目的创新点和应用场景。分享项目过程中的关键发现。]
+                  </p>
+                </div>
+              </div>
             </CardContent>
           </Card>
 
-          {/* Selected Publications */}
+          {/* Publications Section */}
           <Card>
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-4">
@@ -105,7 +135,7 @@ export function MainContent() {
                 <h2 className="text-lg font-semibold">{t("publications.title")}</h2>
               </div>
               <div className="space-y-3">
-                {[1, 2, 3].map((index) => (
+                {[1, 2].map((index) => (
                   <div key={index} className="border-l-2 border-primary/50 pl-3">
                     <p className="font-medium">Publication Title {index}</p>
                     <p className="text-sm text-muted-foreground">Authors, Journal Name, 20XX</p>
